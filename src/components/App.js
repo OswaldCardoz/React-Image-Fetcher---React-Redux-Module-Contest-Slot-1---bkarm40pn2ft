@@ -9,7 +9,7 @@ const App = () => {
  const fetchData=async()=>{
     setLoading(true);
     try{
-        const res=await fetch(`http:jsonplaceholder.typicode.com/photos/${inputNo}`);
+        const res=await fetch(`http://jsonplaceholder.typicode.com/photos/${inputNo}`);
         const json= await res.json();
         setPhotoData(json);
     }catch(error){
@@ -19,7 +19,7 @@ const App = () => {
     }
  }
  useEffect(()=>{
-    if(inputNo){
+    if(inputNo !==''){
         fetchData()
     }
  },[inputNo])
